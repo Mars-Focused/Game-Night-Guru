@@ -1,5 +1,5 @@
 const port = 3001
-const massagesBaseUrl = '/api/games'
+const baseUrl = '/api/games'
 
 const express = require('express')
 const mc = require('./controllers/gamemanager')
@@ -7,9 +7,9 @@ const app = express()
 
 app.use(express.json())
 
-app.get(massagesBaseUrl, mc.read)
-// app.post
-// app.put
+app.post(baseUrl, mc.create)
+app.get(baseUrl, mc.read)
+app.put(`${baseUrl}/:id`, mc.update)
 // app.delete
 
 app.listen(port, () => {

@@ -2,7 +2,7 @@ const port = 3001
 const baseUrl = '/api/games'
 
 const express = require('express')
-const mc = require('./controllers/gamemanager')
+const mc = require('./Components/gamemanager')
 const app = express()
 
 app.use(express.json())

@@ -5,7 +5,7 @@ let score = 1
 let data = require('../data.json')
 
 //req and res is request and response
-//read is our handler
+//these are our handlers
 module.exports = {
     create:(req, res) => {
         const {name} = req.body
@@ -20,10 +20,19 @@ module.exports = {
 
     update: (req, res) => { 
         const {score} = req.body
-        // Still unsure of how to code this part...
+        const updateID = req.params.id
+        const gameIndex = games.findindex(game => game.id == updateID)
+        let game = games[gameIndex]
+        // Still unsure of how to code this part...........................
+        game[gameIndex] = {
+            id: game.id,
+            score: score++,
+            name: name || game.name
+        }
         res.status(200).send(data)
     },
 
+    //unsure on this part...
     delete:(req, res) => {
         const deleteID = req.params.id
         const gameIndex = messages.findIndex(game => game.id == deleteID)

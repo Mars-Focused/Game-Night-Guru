@@ -10,8 +10,8 @@ app.use(express.json())
 app.post(baseUrl, mc.create)
 app.get(baseUrl, mc.read)
 app.put(`${baseUrl}/:id`, mc.update)
-// app.delete
+app.delete(`${baseUrl}/:id`, mc.update)
 
 app.listen(port, () => {
-    console.log(`Ready on port ${port} UwU`)
+    console.log(`Ready on port ${port} Master Nya~ =^w^=`)
 })

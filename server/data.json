@@ -1,16 +1,21 @@
 [
     {"name": "Dungeons and Dragons",
-    "score": 7},
+    "score": 7,
+    "id": 1},
 
     {"name": "Settlers of Catan",
-    "score": 6},
+    "score": 6,
+    "id": 2},
 
     {"name": "Super Smash Bros Ultimate",
-    "score": 8},
+    "score": 8,
+    "id": 3},
 
     {"name": "Betrayal at house on the hill",
-    "score": 9},
+    "score": 9,
+    "id": 4},
 
     {"name": "exploding kittens",
-    "score": 10}
+    "score": 10,
+    "id": 5}
 ]

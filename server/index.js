@@ -7,7 +7,7 @@ const app = express()
 
 app.use(express.json())
 
-// app.get
+app.get(massagesBaseUrl, mc.read)
 // app.post
 // app.put
 // app.delete

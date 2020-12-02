@@ -1,6 +1,6 @@
 let messages = []
-let id = 0
-let score = 1
+let id = 6
+let score = 0
 
 let data = require('../data.json')
 
@@ -9,34 +9,30 @@ let data = require('../data.json')
 module.exports = {
     create:(req, res) => {
         const {name} = req.body
-        data.push({id, score, name})
+        data.push({name, score, id})
         id++
         res.status(200).send(data)
     },
-    
+
     read:(req, res) => {
         res.status(200).send(data)
     },
 
     update: (req, res) => { 
-        const {score} = req.body
         const updateID = req.params.id
-        const gameIndex = games.findindex(game => game.id == updateID)
-        let game = games[gameIndex]
-        // Still unsure of how to code this part...........................
-        game[gameIndex] = {
-            id: game.id,
-            score: score++,
-            name: name || game.name
-        }
+        const gameIndex = data.findIndex(game => game.id == updateID)
+        let game = data[gameIndex]
+        
+        console.log(req)
+
+        data[gameIndex].score++
         res.status(200).send(data)
     },
 
-    //unsure on this part...
     delete:(req, res) => {
         const deleteID = req.params.id
-        const gameIndex = messages.findIndex(game => game.id == deleteID)
-        games.splice(gameIndex, 1)
-        res.status(200).send(messages)
+        const gameIndex = data.findIndex(game => game.id == deleteID)
+        data.splice(gameIndex, 1)
+        res.status(200).send(data)
     }
 }

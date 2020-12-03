@@ -7,9 +7,10 @@ passes in DeleteGame()
 
 import React from 'react'
 
-function GameHolder(){
+function GameHolder(props){
     return <div className="gameholder">
-        <h1>Im GameHolder</h1>
+        {/* {JSON.stringify(props, null, 2)} */}
+{props.game.name}: {props.game.score}
     </div>
 }
 

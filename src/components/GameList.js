@@ -5,15 +5,42 @@ probably needs .sort() to sort games by score
 game array will be passed down as props
 */
 
-import React from 'react'
+import Axios from 'axios';
+import React, {Component} from 'react'
 import GameHolder from './GameHolder'
 
+export default class GameList extends Component {
+    constructor() {
+        super();
+        this.state = { 
+            games: []
+        }
+    }
+    
+    componentDidMount() {
+        Axios.get('/api/games')
+        .then(results => {
+            // console.log(results.data)
+            this.setState({ games: results.data})
+        })
+    }
 
-function GameList(props){
-    console.log(props.gamesArr)
-    return <div className="gamelist">
-            <GameHolder />
-    </div>
+
+
+    render() {
+        const {games} = this.state
+        // console.log(this.props)
+        return (
+            // <div className="gamelist">
+            //     <GameHolder />
+            // </div>
+            <div>
+                {
+                    this.state.games.map( game => (
+                        <GameHolder game = {game}/>
+                    ))
+                }
+            </div>
+        )
+    }
 }
-
-export default GameList

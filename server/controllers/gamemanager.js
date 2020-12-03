@@ -2,6 +2,7 @@ let messages = []
 let id = 6
 let score = 0
 
+const { response } = require('express')
 let data = require('../data.json')
 
 //req and res is request and response
@@ -15,7 +16,8 @@ module.exports = {
     },
 
     read:(req, res) => {
-        res.status(200).send(data)
+        const response = data.sort((a, b) => b.score - a.score)
+        res.status(200).send(response)
     },
 
     update: (req, res) => { 

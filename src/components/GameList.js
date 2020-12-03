@@ -8,9 +8,10 @@ game array will be passed down as props
 import React from 'react'
 import GameHolder from './GameHolder'
 
-function GameList(){
-    return <div className="standard">
-        <h1>Im GameList</h1>
+
+function GameList(props){
+    console.log(props.gamesArr)
+    return <div className="gamelist">
             <GameHolder />
     </div>
 }

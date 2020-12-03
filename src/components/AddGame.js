@@ -7,7 +7,7 @@ State here is User input
 import React from 'react'
 
 function AddGame(){
-    return <div className="standard">
+    return <div className="addgame">
         <h1>Im AddGame</h1>
     </div>
 }

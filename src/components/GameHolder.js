@@ -8,7 +8,7 @@ passes in DeleteGame()
 import React from 'react'
 
 function GameHolder(){
-    return <div className="standard">
+    return <div className="gameholder">
         <h1>Im GameHolder</h1>
     </div>
 }

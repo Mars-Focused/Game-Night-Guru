@@ -1,0 +1,5 @@
+/*
+props goes here so it can make a new game
+post goes here
+State here is User input
+*/

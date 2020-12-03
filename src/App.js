@@ -16,6 +16,8 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <AddGame />
+      <GameList />
     </div>
   );
 }

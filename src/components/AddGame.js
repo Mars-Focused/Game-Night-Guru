@@ -8,7 +8,9 @@ import React from 'react'
 
 function AddGame(){
     return <div className="addgame">
-        <h1>Im AddGame</h1>
+        <input type="text" name="gameinput"></input>
+        <button></button>
+        {/* <h1>Im AddGame</h1> */}
     </div>
 }
 

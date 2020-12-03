@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header(){
     return <header className='header'>
-        <h1>Im the Header</h1>
+        <h1>Game Night Guru</h1>
     </header>
 }
 

@@ -22,7 +22,10 @@ export default class App extends Component {
     this.state ={
       gamesArr: []
     }
+    this.removeGame = this.removeGame.bind(this)
+    this.upvoteGame = this.upvoteGame.bind(this)
   }
+
 // This is how I got information from the back end
   componentDidMount() {
     Axios
@@ -33,12 +36,32 @@ export default class App extends Component {
       })
   }
 
+  upvoteGame(id) {
+    Axios
+    .put(`/api/games/${id}`)
+    .then(res =>{
+      this.setState({gamesArr: res.data})
+    })
+  }
+
+  removeGame(id) {
+    Axios
+    .delete(`/api/games/${id}`)
+    .then(res =>{
+      this.setState({gamesArr: res.data})
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <AddGame />
-        <GameList gamesArr = { this.state.gamesArr }/>
+        <GameList
+        
+        upvoteGame = { this.upvoteGame }
+        removeGame = { this.removeGame }
+        gamesArr = { this.state.gamesArr }/>
       </div>
     );
   }

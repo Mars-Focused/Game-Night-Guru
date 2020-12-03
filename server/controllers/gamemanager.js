@@ -23,10 +23,7 @@ module.exports = {
     update: (req, res) => { 
         const updateID = req.params.id
         const gameIndex = data.findIndex(game => game.id == updateID)
-        let game = data[gameIndex]
         
-        console.log(req)
-
         data[gameIndex].score++
         res.status(200).send(data)
     },

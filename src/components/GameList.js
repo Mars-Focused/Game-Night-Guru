@@ -37,7 +37,10 @@ export default class GameList extends Component {
             <div>
                 {
                     this.state.games.map( game => (
-                        <GameHolder game = {game}/>
+                        <GameHolder game = {game}
+                        upvoteGame = { this.props.upvoteGame }
+                        removeGame = { this.props.removeGame }
+                        />
                     ))
                 }
             </div>

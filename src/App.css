@@ -1,3 +1,8 @@
+html {
+  background: url(https://storge.pic2.me/cm/5120x2880/949/524b1cc5101d8.jpg);
+  -webkit-background-size: cover;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -14,10 +19,17 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: stretch;
 }
 
 .gameholder {
   display: flex;
+  width: 40vw;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonboy {
+  display: flex;
 }

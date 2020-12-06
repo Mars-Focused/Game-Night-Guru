@@ -20,8 +20,11 @@ export default class App extends Component {
   constructor() {
     super()
     this.state ={
-      gamesArr: []
+      gamesArr: [],
+      userInput: ''
     }
+    //this is how we give explicit content to this
+    this.handleInputChange = this.handleInputChange.bind(this)
     this.removeGame = this.removeGame.bind(this)
     this.upvoteGame = this.upvoteGame.bind(this)
   }
@@ -34,6 +37,22 @@ export default class App extends Component {
         // console.log(res.data)
         this.setState({gamesArr: res.data})
       })
+  }
+
+  handleInputChange(e) {
+    console.log(e.target.value)
+    this.setState({
+      userInput: e.target.value
+    
+    })
+  }
+
+  addGame() {
+    // Axios
+    // .create(`/api/game/${UserInput}`)
+    // .then(res => {
+    //   this.setState({gamesArr: res.data})
+    // })
   }
 
   upvoteGame(id) {
@@ -56,9 +75,13 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header />
-        <AddGame />
+        <input onChange={this.handleInputChange}/>
+        <AddGame 
+        addGame = { this.addGame }
+        userInput ={ this.state.userInput }
+        testProp = 'test'/>
+
         <GameList
-        
         upvoteGame = { this.upvoteGame }
         removeGame = { this.removeGame }
         gamesArr = { this.state.gamesArr }/>

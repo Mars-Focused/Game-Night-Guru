@@ -36,7 +36,7 @@ export default class GameList extends Component {
             // </div>
             <div>
                 {
-                    this.state.games.map( game => (
+                    this.props.gamesArr.map( game => (
                         <GameHolder game = {game}
                         upvoteGame = { this.props.upvoteGame }
                         removeGame = { this.props.removeGame }

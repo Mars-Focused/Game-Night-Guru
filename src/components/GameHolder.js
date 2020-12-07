@@ -11,7 +11,9 @@ import React from "react";
 function GameHolder(props) {
   return (
     <div className="gameholder">
-      {props.game.name}: {props.game.score}
+      <p className="textboy">
+        {props.game.name}: {props.game.score}
+      </p>
       <p className="buttonboy">
         {/* he holds the buttons */}
         <button onClick={() => props.upvoteGame(props.game.id)}>upvote</button>

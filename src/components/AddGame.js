@@ -24,7 +24,6 @@ class AddGame extends Component {
     this.setState({
       userInput: e.target.value,
     });
-    // return userInput;
   }
 
   render() {
@@ -33,7 +32,7 @@ class AddGame extends Component {
         <input
           onChange={this.handleInputChange}
           type="text"
-          name="gameinput"
+          // name="gameinput"
         ></input>
         <button onClick={() => this.props.addGame(this.state.userInput)}>
           Add Game

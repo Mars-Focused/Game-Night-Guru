@@ -40,7 +40,7 @@ export default class App extends Component {
 
   //this needs to be changed to add e.target.value
   addGame(gameString) {
-    console.log(gameString);
+    // console.log(gameString);
     Axios.post(`/api/games/${gameString}`).then((res) => {
       this.setState({ gamesArr: res.data });
     });
